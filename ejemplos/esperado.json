@@ -1,0 +1,45 @@
+{
+  "01_taller.txt": {
+    "es_reclamo": true,
+    "reclamos": [
+      { "unidad": "T-145", "fecha_inicio": "2026-10-10", "fecha_fin": "2026-10-17", "estado": "LISTO" }
+    ]
+  },
+  "02_finanzas_monto.txt": {
+    "es_reclamo": true,
+    "reclamos": [
+      { "unidad": "T-088", "tag": "01234567", "caseta": "Palmillas",
+        "fecha_inicio": "2026-10-05", "fecha_fin": "2026-10-05", "monto": 412.0, "estado": "LISTO" }
+    ]
+  },
+  "03_dos_unidades.txt": {
+    "es_reclamo": true,
+    "reclamos": [
+      { "unidad": "T-201", "caseta": "La Venta", "fecha_inicio": "2026-10-03", "monto": 289.0, "estado": "LISTO" },
+      { "unidad": "T-202", "caseta": "La Venta", "fecha_inicio": "2026-10-03", "monto": 289.0, "estado": "LISTO" }
+    ]
+  },
+  "04_placas_fecha_relativa.txt": {
+    "es_reclamo": true,
+    "reclamos": [
+      { "unidad": null, "placas": "45-AK-7J", "caseta": "Querétaro",
+        "fecha_inicio": "2026-10-17", "fecha_fin": "2026-10-17" }
+    ]
+  },
+  "05_sin_identificador.txt": {
+    "es_reclamo": true,
+    "reclamos": [
+      { "unidad": null, "placas": null, "tag": null, "estado": "REVISAR" }
+    ]
+  },
+  "06_no_es_reclamo.txt": {
+    "es_reclamo": false,
+    "reclamos": []
+  },
+  "07_fecha_futura.txt": {
+    "es_reclamo": true,
+    "reclamos": [
+      { "unidad": "T-310", "fecha_inicio": "2026-10-20", "fecha_fin": "2026-10-22", "estado": "REVISAR" }
+    ]
+  }
+}
