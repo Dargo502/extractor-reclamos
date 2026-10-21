@@ -1,4 +1,6 @@
 package reclamos
+import java.time.format.TextStyle
+import java.util.Locale
 
 /**
  * Las instrucciones y el esquema JSON que le mandamos al modelo.
@@ -32,9 +34,13 @@ object Prompt {
           y reclamos = [].
     """.trimIndent()
 
+    // Le damos el día de la semana ya calculado: el modelo se equivocaba resolviendo
+    // "el sábado pasado" (la evaluación lo detectó). Las cuentas de fechas, mejor en código.
     // Sin trimIndent: el texto del correo trae sus propias líneas y lo arruinaría.
-    fun mensajeUsuario(correo: Correo) =
-        "Fecha de recepción: ${correo.fechaRecepcion}\n\n<correo>\n${correo.texto.trim()}\n</correo>"
+    fun mensajeUsuario(correo: Correo): String {
+        val dia = correo.fechaRecepcion.dayOfWeek.getDisplayName(TextStyle.FULL, Locale.forLanguageTag("es"))
+        return "Fecha de recepción: ${correo.fechaRecepcion} ($dia)\n\n<correo>\n${correo.texto.trim()}\n</correo>"
+    }
 
     val ESQUEMA = """
         {
